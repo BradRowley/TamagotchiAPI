@@ -8,12 +8,18 @@ namespace TamagotchiAPI.Models
     public partial class DatabaseContext : DbContext
     {
         // Change this if you want to have a different database name in development
-        private static string DEVELOPMENT_DATABASE_NAME = "TamagotchiAPIDatabase";
+        private static string DEVELOPMENT_DATABASE_NAME = "TamagotchiAPIIDatabase";
 
         // Change this to true if you want to have logging of SQL statements in development
         private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = false;
 
         // Add database tables here
+        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Playtimes> Playtime { get; set; }
+        public DbSet<Feedings> Feeding { get; set; }
+        public DbSet<Scoldings> Scolding { get; set; }
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
